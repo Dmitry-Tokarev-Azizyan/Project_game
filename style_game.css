@@ -1,0 +1,31 @@
+body{
+user-select: none;
+box-sizing: border-box;
+background-color: rgb(10, 83, 150);
+margin: 0;
+display: flex;
+justify-content: center;
+}
+
+.main_place{
+background-color: aquamarine;
+width: 80%;
+height: 800px;
+margin-top: 10%;
+display: flex;
+justify-content: space-between;
+}
+
+.player_place{
+background-color: rgb(10, 83, 150);
+width: 20%;
+height: 700px;
+margin-top: 50px;
+}
+
+.game_place{
+    
+}
+
+
+
