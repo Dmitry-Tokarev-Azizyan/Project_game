@@ -10,17 +10,29 @@ justify-content: center;
 .main_place{
 background-color: aquamarine;
 width: 80%;
+min-width: 800px;
 height: 700px;
 margin-top: 10%;
 display: flex;
 justify-content: space-between;
 }
 
-.player_place{
+.player_place_1{
 background-color: rgb(10, 83, 150);
 width: 20%;
 height: 600px;
 margin-top: 50px;
+display: flex;
+flex-direction: column;
+}
+
+.player_place_2 {
+background-color: rgb(10, 83, 150);
+width: 20%;
+height: 600px;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
 }
 
 .game_place{
@@ -35,25 +47,37 @@ flex-direction: column;
 .text_game{
 margin-top: 20px;
 background-color: aquamarine;
-width: 100px;
-height: 50px;
+width: 150px;
 margin-left: auto;
 margin-right: auto;
+text-align: center;
+font-family: 'Times New Roman', Times, serif;
+font-size: 35px;
+font-weight: 700;
+color: blueviolet;
+}
+.text_game_quality{
+    margin-top: 400px;
 }
 
 .button_start_game{
 margin-top: 20px;
 background-color: aquamarine;
-width: 100px;
+width: 80%;
 height: 50px;
 margin-left: auto;
 margin-right: auto;
+border: 0px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 35px;
+font-weight: 700;
+color: blueviolet;
 }
 
 .conteiner_box{
-margin-top: 20px;
+margin-top: 10px;
 background-color: aquamarine;
-width: 350px;
+width: 80%;
 height:350px;
 margin-left: auto;
 margin-right: auto;
@@ -66,20 +90,22 @@ margin-right: auto;
 .cage_level_1{
 display: flex;
 justify-content: center;
-margin-top: 5px;
+margin-top: 10px;
 }
-
-
 
 .cage{
 width: 100px;
 height: 100px;
 background-color: rgb(10, 83, 150);
-margin-left: 2px;
-margin-right: 2px;
+margin-left: 5px;
+margin-right: 5px;
+
 }
 
 
+.player_place_active{
+    background-color:aquamarine;
+}
 
 
 
