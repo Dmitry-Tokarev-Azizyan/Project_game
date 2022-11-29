@@ -25,7 +25,26 @@ if(activePlayer === 1&&arrMain[i]!==1&&arrMain[i]!==10){
 arrMain[i]=1;
 player_2_start_game.classList.remove('player_place_active'); 
 player_1_start_game.classList.add('player_place_active');
-cage_player[i].style.backgroundColor = "red";
+cage_player[i].innerHTML = `<svg>
+                <line
+                  class="first_line"
+                  x1="0"
+                  y1="0"
+                  x2="100"
+                  y2="100"
+                  stroke-width="5"
+                  stroke="red"
+                />
+                <line
+                  class="second_line"
+                  x1="100"
+                  y1="0"
+                  x2="0"
+                  y2="100"
+                  stroke-width="5"
+                  stroke="red"
+                />
+              </svg>`;
 activePlayer = activePlayer + 1;
 }
 if( activePlayer === 2&&arrMain[i]!==1&&arrMain[i]!==10) {
