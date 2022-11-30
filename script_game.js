@@ -28,21 +28,23 @@ player_1_start_game.classList.add('player_place_active');
 cage_player[i].innerHTML = `<svg>
                 <line
                   class="first_line"
-                  x1="0"
-                  y1="0"
-                  x2="100"
-                  y2="100"
-                  stroke-width="5"
+                  x1="5"
+                  y1="5"
+                  x2="95"
+                  y2="95"
+                  stroke-width="8"
                   stroke="red"
+                  stroke-linecap="round"
                 />
                 <line
                   class="second_line"
-                  x1="100"
-                  y1="0"
-                  x2="0"
-                  y2="100"
-                  stroke-width="5"
+                  x1="95"
+                  y1="5"
+                  x2="5"
+                  y2="95"
+                  stroke-width="8"
                   stroke="red"
+                  stroke-linecap="round"
                 />
               </svg>`;
 activePlayer = activePlayer + 1;
@@ -51,7 +53,17 @@ if( activePlayer === 2&&arrMain[i]!==1&&arrMain[i]!==10) {
 arrMain[i]=10;  
 player_1_start_game.classList.remove('player_place_active');   
 player_2_start_game.classList.add('player_place_active');
-cage_player[i].style.backgroundColor = "black";
+cage_player[i].innerHTML = `              <svg>
+                <circle
+                  class="circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke="blue"
+                  stroke-width="8"
+                  fill="none"
+                />
+              </svg>`;
 activePlayer = activePlayer - 1;
 }
 
@@ -65,11 +77,13 @@ arr_7=arrMain[0] + arrMain[4] + arrMain[8];
 arr_8=arrMain[6] + arrMain[4] + arrMain[2];
 
 if(arr_1===3||arr_2===3||arr_3===3||arr_4===3||arr_5===3||arr_6===3||arr_7===3||arr_8===3){
-text_information.textContent="Победа Красных"
+text_information.textContent="Победа Красных";
+activePlayer=3;
 
 }
 else if(arr_1===30||arr_2===30||arr_3===30||arr_4===30||arr_5===30||arr_6===30||arr_7===30||arr_8===30){
 text_information.textContent="Победа Черных"
+activePlayer=3;
 }
 
 });
@@ -79,7 +93,3 @@ text_information.textContent="Победа Черных"
 
 }
 
-button_start.addEventListener('click', function(){ 
-
-
-})
