@@ -1,179 +1,162 @@
-body{
-user-select: none;
-box-sizing: border-box;
-background-color: rgb(10, 83, 150);
-margin: 0;
-display: flex;
-justify-content: center;
+body {
+  user-select: none;
+  box-sizing: border-box;
+  background-color: rgb(10, 83, 150);
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.first_line{
-animation-name: animation-line_first;
-animation-duration: 0.3s;
- }
-
-.second_line{
-animation-name: animation-line_second;
-animation-duration: 0.3s;
- }
-
- .circle{
-animation-name: animation-circle;
-animation-duration: 0.5s;
- }
-
-
-@keyframes animation-circle{
-    0% {
-     stroke-dasharray: 283;
-     stroke-dashoffset: 283;
-        }
-    
-        100% {
-     stroke-dasharray: 283;
-     stroke-dashoffset: 0;
-        }
+.first_line {
+  animation-name: animation-line_first;
+  animation-duration: 0.3s;
 }
 
+.second_line {
+  animation-name: animation-line_second;
+  animation-duration: 0.3s;
+}
+
+.circle {
+  animation-name: animation-circle;
+  animation-duration: 0.5s;
+}
+
+@keyframes animation-circle {
+  0% {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+  }
+
+  100% {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+  }
+}
 
 @keyframes animation-line_first {
-    0% {
+  0% {
     stroke-dasharray: 128;
     stroke-dashoffset: 128;
-    }
+  }
 
-    100% {
-        stroke-dasharray: 128;
-        stroke-dashoffset: 0;
-    }
-}
-
-
-
-@keyframes animation-line_second {
-    0%{
-    stroke-dasharray: 128;
-    stroke-dashoffset: 128;
-    }
-    
-    50% {
-    stroke-dasharray: 128;
-    stroke-dashoffset: 128;
-    }
-
-    100% {
+  100% {
     stroke-dasharray: 128;
     stroke-dashoffset: 0;
-    }
+  }
 }
 
+@keyframes animation-line_second {
+  0% {
+    stroke-dasharray: 128;
+    stroke-dashoffset: 128;
+  }
 
+  50% {
+    stroke-dasharray: 128;
+    stroke-dashoffset: 128;
+  }
 
-
-
-.main_place{
-background-color: aquamarine;
-width: 80%;
-min-width: 800px;
-height: 700px;
-margin-top: 10%;
-display: flex;
-justify-content: space-between;
+  100% {
+    stroke-dasharray: 128;
+    stroke-dashoffset: 0;
+  }
 }
 
-.player_place_1{
-background-color: rgb(10, 83, 150);
-width: 20%;
-height: 600px;
-margin-top: 50px;
-display: flex;
-flex-direction: column;
+.main_place {
+  background-color: aquamarine;
+  width: 80%;
+  min-width: 800px;
+  height: 700px;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.player_place_1 {
+  background-color: rgb(10, 83, 150);
+  width: 20%;
+  height: 600px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .player_place_2 {
-background-color: rgb(10, 83, 150);
-width: 20%;
-height: 600px;
-margin-top: 50px;
-display: flex;
-flex-direction: column;
+  background-color: rgb(10, 83, 150);
+  width: 20%;
+  height: 600px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.game_place{
-background-color: rgb(10, 83, 150);
-width: 50%;
-height: 600px;
-margin-top: 50px;
-display: flex;
-flex-direction: column;
+.game_place {
+  background-color: rgb(10, 83, 150);
+  width: 50%;
+  height: 600px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.text_game{
-margin-top: 20px;
-background-color: aquamarine;
-width: 150px;
-margin-left: auto;
-margin-right: auto;
-text-align: center;
-font-family: 'Times New Roman', Times, serif;
-font-size: 35px;
-font-weight: 700;
-color: blueviolet;
+.text_game {
+  margin-top: 20px;
+  background-color: aquamarine;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: blueviolet;
 }
-.text_game_quality{
-    margin-top: 400px;
-}
-
-.button_start_game{
-margin-top: 20px;
-background-color: aquamarine;
-width: 80%;
-height: 50px;
-margin-left: auto;
-margin-right: auto;
-border: 0px;
-font-family: 'Times New Roman', Times, serif;
-font-size: 35px;
-font-weight: 700;
-color: blueviolet;
+.text_game_quality {
+  margin-top: 400px;
 }
 
-.conteiner_box{
-margin-top: 10px;
-background-color: aquamarine;
-width: 100%;
-height:350px;
-margin-left: auto;
-margin-right: auto;
-display: flex;
-flex-direction: column;
-margin-left: auto;
-margin-right: auto;
+.button_start_game {
+  margin-top: 20px;
+  background-color: aquamarine;
+  width: 80%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: blueviolet;
 }
 
-.cage_level_1{
-display: flex;
-justify-content: center;
-margin-top: 10px;
+.conteiner_box {
+  margin-top: 10px;
+  background-color: aquamarine;
+  width: 100%;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cage{
-width: 100px;
-height: 100px;
-background-color: rgb(10, 83, 150);
-margin-left: 5px;
-margin-right: 5px;
-
+.cage_level_1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-
-
-
-.player_place_active{
-    background-color:aquamarine;
+.cage {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(10, 83, 150);
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-
-
-
-
+.player_place_active {
+  background-color: aquamarine;
+}
