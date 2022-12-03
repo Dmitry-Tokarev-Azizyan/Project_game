@@ -22,21 +22,21 @@ for (let i = 0; i < cage_player.length; i++) {
       cage_player[i].innerHTML = `<svg>
                 <line
                   class="first_line"
-                  x1="5"
-                  y1="5"
-                  x2="95"
-                  y2="95"
-                  stroke-width="8"
+                  x1="2"
+                  y1="2"
+                  x2="48"
+                  y2="48"
+                  stroke-width="4"
                   stroke="red"
                   stroke-linecap="round"
                 />
                 <line
                   class="second_line"
-                  x1="95"
-                  y1="5"
-                  x2="5"
-                  y2="95"
-                  stroke-width="8"
+                  x1="48"
+                  y1="2"
+                  x2="2"
+                  y2="48"
+                  stroke-width="4"
                   stroke="red"
                   stroke-linecap="round"
                 />
@@ -47,14 +47,14 @@ for (let i = 0; i < cage_player.length; i++) {
       arrMain[i] = 10;
       player_1_start_game.classList.remove("player_place_active");
       player_2_start_game.classList.add("player_place_active");
-      cage_player[i].innerHTML = `              <svg>
+      cage_player[i].innerHTML = `<svg>
                 <circle
                   class="circle"
-                  cx="50"
-                  cy="50"
-                  r="45"
+                  cx="25"
+                  cy="25"
+                  r="20"
                   stroke="blue"
-                  stroke-width="8"
+                  stroke-width="4"
                   fill="none"
                 />
               </svg>`;
