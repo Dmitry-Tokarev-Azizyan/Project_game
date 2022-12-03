@@ -63,10 +63,18 @@ body {
   }
 }
 
+@media screen and (min-width:100px) and (max-width:800px){
+  .text_game{
+display: none;
+  }
+  .button_start_game{
+display: none;
+  }
+}
 .main_place {
   background-color: aquamarine;
   width: 80%;
-  min-width: 800px;
+  min-width: 600px;
   height: 700px;
   margin-top: 10%;
   display: flex;
