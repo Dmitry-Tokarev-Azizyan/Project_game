@@ -2,12 +2,16 @@ body {
   user-select: none;
   box-sizing: border-box;
   background-color: rgb(10, 83, 150);
+  min-width: 380px;
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-
+svg{
+  width: 50px;
+  height: 50px;
+}
 
 @keyframes animation-circle {
   0% {
@@ -70,12 +74,12 @@ body {
 .text_game {
     margin-top: 5px;
     background-color: aquamarine;
-    width: 50px;
+    width: 40px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     color: blueviolet;
   }
@@ -155,7 +159,6 @@ body {
 
 .main_place {
   background-color: aquamarine;
-  
   width: 80%;
   min-width: 250px;
   height: 700px;
