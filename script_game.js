@@ -172,7 +172,7 @@ for (let i = 0; i < cage_player.length; i++) {
       activePlayer = activePlayer - 1;
     }
 
-    arr_1 = arrMain[0] + arrMain[1] + arrMain[2];
+    arr_1 = arrMain[0] + arrMain[1] + arrMain[2]; //Функция 
     arr_2 = arrMain[3] + arrMain[4] + arrMain[5];
     arr_3 = arrMain[6] + arrMain[7] + arrMain[8];
     arr_4 = arrMain[0] + arrMain[3] + arrMain[6];
@@ -194,7 +194,7 @@ for (let i = 0; i < cage_player.length; i++) {
       arr_8 === 3
     ) {
       text_information.textContent = "Победа Красных";
-      activePlayer = 3;
+      activePlayer = 3;// Перевести в переменные.
       victoryArr[0]+=1;
     for(let i = 0; i < arrMain.length; i++){
       if(arrMain[i]===0||arrMain[i]===10){
@@ -241,8 +241,8 @@ button_start_new.addEventListener("click", function(){
   text_victory_2.textContent=victoryArr[1];
   activePlayer = 1;
   player_1_start_game.classList.remove("player_place_active");
-  player_2_start_game.classList.remove("player_place_active");
-  text_information.textContent = "Игра";
+                       player_2_start_game.classList.remove("player_place_active");
+      text_information.textContent = "Игра";
 });
 
 
