@@ -2,15 +2,347 @@ body {
   user-select: none;
   box-sizing: border-box;
   background-color: rgb(10, 83, 150);
-  min-width: 380px;
+  min-width: 360px;
+  max-width: 2000px;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: center;
 }
 
-svg{
+
+
+
+@media screen and (min-width:50px) and (max-width:450px){
+.text_game {
+    margin-top: 5px;
+    background-color: aquamarine;
+    width: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: blueviolet;
+  }
+.button_start_game {
+  margin-top: 5px;
+  background-color: aquamarine;
+  width: 80%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: blueviolet;
+}
+.cage {
+  min-width: 50px;
   width: 50px;
   height: 50px;
+  background-color: rgb(10, 83, 150);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.first_line_min {
+  animation-name: animation-line_first;
+  animation-duration: 0.3s;
+}
+
+.second_line_min {
+  animation-name: animation-line_second;
+  animation-duration: 0.3s;
+}
+
+.first_line_max {
+  display: none;
+}
+
+.second_line_max {
+  display: none;
+}
+.first_line_max_1 {
+  display: none;
+}
+
+.second_line_max_1 {
+  display: none;
+}
+.first_line_max_2 {
+  display: none;
+}
+
+.second_line_max_2 {
+  display: none;
+}
+.circle {
+  display: none;
+}
+
+.circle_1 {
+  display: none;
+}
+
+.circle_2 {
+ display: none;
+}
+
+.circle_3 {
+    animation-name: animation-circle;
+      animation-duration: 0.5s;
+}
+}
+
+
+@media screen and (min-width:450px) and (max-width:650px) {
+  .text_game {
+    margin-top: 5px;
+    background-color: aquamarine;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: blueviolet;
+  }
+  .button_start_game {
+    margin-top: 5px;
+    background-color: aquamarine;
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: blueviolet;
+  }
+.cage {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(10, 83, 150);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.first_line_max {
+  display: none;
+}
+
+.second_line_max {
+  display: none;
+}
+
+.first_line_min {
+  display: none;
+}
+
+.second_line_min {
+  display: none;
+}
+.first_line_max_1 {
+  display: none;
+}
+
+.second_line_max_1 {
+  display: none;
+}
+.first_line_max_2 {
+    animation-name: animation-line_first;
+      animation-duration: 0.3s;
+}
+
+.second_line_max_2 {
+  animation-name: animation-line_second;
+    animation-duration: 0.3s;
+}
+.circle {
+  display: none;
+}
+
+.circle_1 {
+display: none;
+}
+
+.circle_2 {
+  animation-name: animation-circle;
+    animation-duration: 0.5s;
+}
+
+.circle_3 {
+  display: none;
+}
+}
+
+
+
+@media screen and (min-width:650px) and (max-width:950px) {
+  .text_game {
+    margin-top: 10px;
+    background-color: aquamarine;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: blueviolet;
+  }
+.button_start_game {
+  margin-top: 10px;
+  background-color: aquamarine;
+  width: 80%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: blueviolet;
+}
+.cage {
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(10, 83, 150);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.first_line_max {
+  display: none;
+}
+.second_line_max {
+  display: none;
+}
+.first_line_min {
+  display: none;
+}
+.second_line_min {
+  display: none;
+}
+.first_line_max_1 {
+  animation-name: animation-line_first;
+  animation-duration: 0.3s;
+}
+.second_line_max_1 {
+  animation-name: animation-line_second;
+  animation-duration: 0.3s;
+}
+.first_line_max_2 {
+  display: none;
+}
+
+.second_line_max_2 {
+  display: none;
+}
+.circle {
+display: none;
+}
+
+.circle_1 {
+  animation-name: animation-circle;
+    animation-duration: 0.5s;
+}
+
+.circle_2 {
+  display: none;
+}
+
+.circle_3 {
+  display: none;
+}
+}
+
+@media screen and (min-width:950px) and (max-width:10500px) {
+.text_game {
+    margin-top: 20px;
+    background-color: aquamarine;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: blueviolet;
+  }
+.button_start_game {
+  margin-top: 20px;
+  background-color: aquamarine;
+  width: 80%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: blueviolet;
+}
+.cage {
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(10, 83, 150);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.first_line_max{
+  animation-name: animation-line_first;
+  animation-duration: 0.3s;
+}
+
+.second_line_max {
+  animation-name: animation-line_second;
+  animation-duration: 0.3s;
+}
+
+.first_line_min{
+display: none;
+}
+.second_line_min{
+display: none;
+}
+
+.first_line_max_1 {
+  display: none;
+}
+
+.second_line_max_1 {
+  display: none;
+}
+.first_line_max_2 {
+  display: none;
+}
+
+.second_line_max_2 {
+  display: none;
+}
+
+.circle {
+  animation-name: animation-circle;
+  animation-duration: 0.5s;
+}
+.circle_1 {
+display: none;
+}
+.circle_2 {
+display: none;
+}
+.circle_3 {
+display: none;
+}
+
 }
 
 @keyframes animation-circle {
@@ -52,110 +384,9 @@ svg{
     stroke-dasharray: 128;
     stroke-dashoffset: 0;
   }
-}
-.first_line {
-  animation-name: animation-line_first;
-  animation-duration: 0.3s;
-
+  
 }
 
-.second_line {
-  animation-name: animation-line_second;
-  animation-duration: 0.3s;
-
-}
-
-.circle {
-  animation-name: animation-circle;
-  animation-duration: 0.5s;
-
-}
-@media screen and (min-width:50px) and (max-width:650px){
-.text_game {
-    margin-top: 5px;
-    background-color: aquamarine;
-    width: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: blueviolet;
-  }
-.button_start_game {
-  margin-top: 5px;
-  background-color: aquamarine;
-  width: 80%;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 0px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: blueviolet;
-}
-
-}
-
-@media screen and (min-width:650px) and (max-width:950px) {
-  .text_game {
-    margin-top: 10px;
-    background-color: aquamarine;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 25px;
-    font-weight: 700;
-    color: blueviolet;
-  }
-.button_start_game {
-  margin-top: 10px;
-  background-color: aquamarine;
-  width: 80%;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 0px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 25px;
-  font-weight: 700;
-  color: blueviolet;
-}
-
-}
-
-@media screen and (min-width:950px) and (max-width:3500px) {
-.text_game {
-    margin-top: 20px;
-    background-color: aquamarine;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 35px;
-    font-weight: 700;
-    color: blueviolet;
-  }
-.button_start_game {
-  margin-top: 20px;
-  background-color: aquamarine;
-  width: 80%;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 0px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 35px;
-  font-weight: 700;
-  color: blueviolet;
-}
-
-}
 
 .main_place {
   background-color: aquamarine;
@@ -226,15 +457,12 @@ svg{
   margin-top: 10px;
 }
 
-.cage {
-  min-width: 50px;
-  width: 50px;
-  height: 50px;
-  background-color: rgb(10, 83, 150);
-  margin-left: 5px;
-  margin-right: 5px;
-}
+
 
 .player_place_active {
   background-color: aquamarine;
+}
+
+.delete_cage {
+  visibility: hidden;
 }

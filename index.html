@@ -11,35 +11,36 @@
     <div class="main_place">
       <div class="player_place_1">
         <p class="text_game">Игрок 1</p>
-        <p class="text_game text_game_quality">Кол-во побед: 0</p>
+        <p class="text_game text_game_quality" id="text_victory_1">0</p>
       </div>
       <div class="game_place">
-        <button class="button_start_game">Играем заново</button>
-        <!--<button class="button_start_game">Старт</button>-->
-        <p class="text_game" id="text_information"></p>
+        <button class="button_start_game" id ="again_play_new">Играем заново</button>
+        <button class="button_start_game" id ="again_play_continue">Продолжить</button>
+        <p class="text_game" id="text_information">Игра</p>
         <div class="conteiner_box">
           <div class="cage_level_1">
-            <div class="cage" id="cage_1"></div>
-            <div class="cage" id="cage_2"></div>
-            <div class="cage" id="cage_3"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
           </div>
           <div class="cage_level_1">
-            <div class="cage" id="cage_4"></div>
-            <div class="cage" id="cage_5"></div>
-            <div class="cage" id="cage_6"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
           </div>
           <div class="cage_level_1">
-            <div class="cage" id="cage_7"></div>
-            <div class="cage" id="cage_8"></div>
-            <div class="cage" id="cage_9"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
+            <div class="cage"></div>
           </div>
         </div>
       </div>
       <div class="player_place_2">
         <p class="text_game">Игрок 2</p>
-        <p class="text_game text_game_quality">Кол-во побед: 0</p>
+        <p class="text_game text_game_quality" id="text_victory_2">0</p>
       </div>
     </div>
+    
     <script src="script_game.js"></script>
   </body>
 </html>
