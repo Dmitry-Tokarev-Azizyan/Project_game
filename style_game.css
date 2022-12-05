@@ -388,6 +388,7 @@ display: none;
 }
 
 
+
 .main_place {
   background-color: aquamarine;
   width: 80%;
@@ -408,6 +409,15 @@ display: none;
   display: flex;
   flex-direction: column;
 }
+.svg_x {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 40;
+  margin-bottom: 10px;
+}
+
 
 .player_place_2 {
   background-color: rgb(10, 83, 150);
@@ -432,7 +442,7 @@ display: none;
 
 
 .text_game_quality {
-  margin-top: 400px;
+  margin-top: 10px;
 }
 
 

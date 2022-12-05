@@ -10,16 +10,9 @@ const text_information = document.getElementById("text_information");
 const text_victory_1 = document.getElementById("text_victory_1");
 const text_victory_2 = document.getElementById("text_victory_2");
 const svg = document.querySelectorAll(".svg_class");
-/*
-const first_line_min = document.querySelector("first_line_min ");
-const second_line_min = document.querySelector("second_line_min ");
-const first_line_max = document.querySelector("first_line_max ");
-const second_line_max = document.querySelector("second_line_max ");
-const first_line_max_1 = document.querySelector("first_line_max_1 ");
-const second_line_max_1 = document.querySelector("second_line_max_1 ");
-const first_line_max_2 = document.querySelector("first_line_max_2 ");
-const second_line_max_2 = document.querySelector("second_line_max_2 ");
-*/
+
+
+
 
 let activePlayer = 1;
 let arrMain = [];
@@ -27,7 +20,9 @@ let victoryArr = [0,0];
 let arr_1, arr_2, arr_3, arr_4, arr_5, arr_6, arr_7, arr_8;
 
 
-for (let i = 0; i < cage_player.length; i++) {
+              
+
+for (let i = 0; i < cage_player.length; i++) {//цикл
   arrMain[i] = 0;
 
   cage_player[i].addEventListener("click", function () { //баблинг
@@ -43,6 +38,7 @@ for (let i = 0; i < cage_player.length; i++) {
                   x2="95"
                   y2="95"
                   stroke-width="8"
+                  
                   stroke="red"
                   stroke-linecap="round"
                 />          
@@ -196,11 +192,36 @@ for (let i = 0; i < cage_player.length; i++) {
       text_information.textContent = "Победа Красных";
       activePlayer = 3;// Перевести в переменные.
       victoryArr[0]+=1;
+      text_victory_1.textContent=victoryArr[0];
+      for(let y=0;y<1;y++){
+ player_1_start_game.insertAdjacentHTML('beforeend',
+`<svg class='svg_x'>
+                  <line
+                  x1="2"
+                  y1="2"
+                  x2="48"
+                  y2="48"
+                  stroke-width="5"
+                  stroke="red"
+                  stroke-linecap="round"
+                >  </line>      
+                <line
+                  x1="48"
+                  y1="2"
+                  x2="2"
+                  y2="48"
+                  stroke-width="5"
+                  stroke="red"
+                  stroke-linecap="round"
+                ></line> 
+                </svg>`);
+}
     for(let i = 0; i < arrMain.length; i++){
       if(arrMain[i]===0||arrMain[i]===10){
         cage_player[i].classList.add("delete_cage");
       }
-      text_victory_1.textContent=victoryArr[0];
+      
+
     }
    
 
@@ -217,6 +238,7 @@ for (let i = 0; i < cage_player.length; i++) {
       text_information.textContent = "Победа Черных";
       activePlayer = 3;
       victoryArr[1]+=1;
+      
       for(let i = 0; i < arrMain.length; i++){
       if(arrMain[i]===0||arrMain[i]===1){
       cage_player[i].classList.add("delete_cage");
@@ -224,11 +246,21 @@ for (let i = 0; i < cage_player.length; i++) {
       text_victory_2.textContent=victoryArr[1];
     }
     }
-
+if(victoryArr[0]===4||victoryArr[1]===4){
+  text_information.textContent = "Игра окончена";
+  for(let i = 0; i < arrMain.length; i++){
+   cage_player[i].classList.add("delete_cage");
+  }
+}
   });
+  
 
 
 }//цикл
+
+
+
+
 
 button_start_new.addEventListener("click", function(){
  for (let i = 0; i < cage_player.length; i++) {
@@ -241,8 +273,11 @@ button_start_new.addEventListener("click", function(){
   text_victory_2.textContent=victoryArr[1];
   activePlayer = 1;
   player_1_start_game.classList.remove("player_place_active");
-                       player_2_start_game.classList.remove("player_place_active");
-      text_information.textContent = "Игра";
+  player_2_start_game.classList.remove("player_place_active");
+  text_information.textContent = "Игра";
+ player_1_start_game.innerHTML= `<p class="text_game">Игрок 1</p>
+
+        <p class="text_game text_game_quality" id="text_victory_1">0</p>`;
 });
 
 
@@ -258,4 +293,5 @@ button_start_continue.addEventListener('click',function(){
   player_1_start_game.classList.remove("player_place_active");
   player_2_start_game.classList.remove("player_place_active");
   text_information.textContent = "Игра";
+
 })
