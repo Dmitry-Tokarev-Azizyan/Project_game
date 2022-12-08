@@ -190,10 +190,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_8 === 3
     ) {
       text_information.textContent = "Победа Красных";
-      activePlayer = 3;// Перевести в переменные.
+      activePlayer = 0;// Перевести в переменные.
       victoryArr[0]+=1;
       text_victory_1.textContent=victoryArr[0];
-      for(let y=0;y<1;y++){
+     
  player_1_start_game.insertAdjacentHTML('beforeend',
 `<svg class='svg_x'>
                   <line
@@ -215,13 +215,13 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
                   stroke-linecap="round"
                 ></line> 
                 </svg>`);
-}
+
     for(let i = 0; i < arrMain.length; i++){
+      cage_player[i].style.pointerEvents='none';
       if(arrMain[i]===0||arrMain[i]===10){
         cage_player[i].classList.add("delete_cage");
       }
       
-
     }
    
 
@@ -236,7 +236,7 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_8 === 30
     ) {
       text_information.textContent = "Победа Черных";
-      activePlayer = 3;
+      activePlayer = 0;
       victoryArr[1]+=1;
       
       for(let i = 0; i < arrMain.length; i++){
@@ -264,6 +264,7 @@ if(victoryArr[0]===4||victoryArr[1]===4){
 
 button_start_new.addEventListener("click", function(){
  for (let i = 0; i < cage_player.length; i++) {
+ cage_player[i].style.pointerEvents='auto';//клик
  cage_player[i].classList.remove("delete_cage");
  arrMain[i] = 0;
  cage_player[i].innerHTML='';
@@ -285,6 +286,7 @@ button_start_new.addEventListener("click", function(){
 
 button_start_continue.addEventListener('click',function(){
   for (let i = 0; i < cage_player.length; i++) {
+    cage_player[i].style.pointerEvents='auto';
  cage_player[i].classList.remove("delete_cage");
  arrMain[i] = 0;
  cage_player[i].innerHTML='';
