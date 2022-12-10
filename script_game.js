@@ -197,20 +197,20 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
  player_1_start_game.insertAdjacentHTML('beforeend',
 `<svg class='svg_x'>
                   <line
-                  x1="2"
-                  y1="2"
-                  x2="48"
-                  y2="48"
-                  stroke-width="5"
+                  x1="0"
+                  y1="0"
+                  x2="30"
+                  y2="30"
+                  stroke-width="3"
                   stroke="red"
                   stroke-linecap="round"
                 >  </line>      
                 <line
-                  x1="48"
-                  y1="2"
-                  x2="2"
-                  y2="48"
-                  stroke-width="5"
+                  x1="30"
+                  y1="0"
+                  x2="0"
+                  y2="30"
+                  stroke-width="3"
                   stroke="red"
                   stroke-linecap="round"
                 ></line> 
@@ -238,19 +238,34 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       text_information.textContent = "Победа Черных";
       activePlayer = 0;
       victoryArr[1]+=1;
-      
+      text_victory_2.textContent=victoryArr[1];
+
+ player_2_start_game.insertAdjacentHTML('beforeend',
+`<svg class='svg_circle_value'>
+          <circle
+                  cx="12"
+                  cy="12"
+                  r="11"
+                  stroke="blue"
+                  stroke-width="5"
+                  fill="none"
+                />
+                </svg>`);
+
       for(let i = 0; i < arrMain.length; i++){
       if(arrMain[i]===0||arrMain[i]===1){
       cage_player[i].classList.add("delete_cage");
       }
-      text_victory_2.textContent=victoryArr[1];
+      
     }
     }
 if(victoryArr[0]===4||victoryArr[1]===4){
   text_information.textContent = "Игра окончена";
+  button_start_continue.classList.add("delete_cage");
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
+  
 }
   });
   
@@ -269,12 +284,14 @@ button_start_new.addEventListener("click", function(){
  arrMain[i] = 0;
  cage_player[i].innerHTML='';
   }
-  victoryArr =[0,0];
-  text_victory_1.textContent=victoryArr[0];
-  text_victory_2.textContent=victoryArr[1];
+
+  victoryArr[0]=0;
+  victoryArr[1]=0;
+ 
   activePlayer = 1;
   player_1_start_game.classList.remove("player_place_active");
   player_2_start_game.classList.remove("player_place_active");
+  button_start_continue.classList.remove("delete_cage");
   text_information.textContent = "Игра";
  player_1_start_game.innerHTML= `<p class="text_game">Игрок 1</p>
 
@@ -283,17 +300,25 @@ button_start_new.addEventListener("click", function(){
 
 
 
+//Сделать активной, когда все эелементы массива будут переполнены.
 
 button_start_continue.addEventListener('click',function(){
+
   for (let i = 0; i < cage_player.length; i++) {
-    cage_player[i].style.pointerEvents='auto';
+
+ cage_player[i].style.pointerEvents='auto';
  cage_player[i].classList.remove("delete_cage");
  arrMain[i] = 0;
  cage_player[i].innerHTML='';
+
   }
+
   activePlayer = 1;
   player_1_start_game.classList.remove("player_place_active");
   player_2_start_game.classList.remove("player_place_active");
+  
   text_information.textContent = "Игра";
 
+
 })
+
