@@ -7,8 +7,8 @@ const player_2_start_game = document.querySelector(".player_place_2");
 const button_start_new = document.getElementById("again_play_new");
 const button_start_continue = document.getElementById("again_play_continue");
 const text_information = document.getElementById("text_information");
-const text_victory_1 = document.getElementById("text_victory_1");
-const text_victory_2 = document.getElementById("text_victory_2");
+//const text_victory_1 = document.getElementById("text_victory_1");
+//const text_victory_2 = document.getElementById("text_victory_2");
 const svg = document.querySelectorAll(".svg_class");
 
 
@@ -18,8 +18,8 @@ let activePlayer = 1;
 let arrMain = [];
 let victoryArr = [0,0];
 let arr_1, arr_2, arr_3, arr_4, arr_5, arr_6, arr_7, arr_8;
-
-
+text_information.textContent = "Ход ❌";
+button_start_continue.classList.add("delete_cage");
               
 
 for (let i = 0; i < cage_player.length; i++) {//цикл
@@ -28,8 +28,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
   cage_player[i].addEventListener("click", function () { //баблинг
     if (activePlayer === 1 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 1;
+      text_information.textContent = "Ход ⭕";
       player_2_start_game.classList.remove("player_place_active");
       player_1_start_game.classList.add("player_place_active");
+      //MAP
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <line
                   class="first_line_max"
@@ -115,15 +117,15 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
                   stroke="red"
                   stroke-linecap="round"
                 />
-
-                
               </svg>`;
       activePlayer = activePlayer + 1;
     }
     if (activePlayer === 2 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 10;
+      text_information.textContent = "Ход ❌";
       player_1_start_game.classList.remove("player_place_active");
       player_2_start_game.classList.add("player_place_active");
+      
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <circle
                   class="circle"
@@ -162,8 +164,6 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
                   stroke-width="5"
                   fill="none"
                 />
- 
-
               </svg>`;
       activePlayer = activePlayer - 1;
     }
@@ -189,10 +189,11 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_7 === 3 ||
       arr_8 === 3
     ) {
-      text_information.textContent = "Победа Красных";
+      text_information.textContent = "Победа ❌";
+      button_start_continue.classList.remove("delete_cage");
       activePlayer = 0;// Перевести в переменные.
       victoryArr[0]+=1;
-      text_victory_1.textContent=victoryArr[0];
+      //text_victory_1.textContent=victoryArr[0];
      
  player_1_start_game.insertAdjacentHTML('beforeend',
 `<svg class='svg_x'>
@@ -235,16 +236,17 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_7 === 30 ||
       arr_8 === 30
     ) {
-      text_information.textContent = "Победа Черных";
+      text_information.textContent = "Победа ⭕";
+      button_start_continue.classList.remove("delete_cage");
       activePlayer = 0;
       victoryArr[1]+=1;
-      text_victory_2.textContent=victoryArr[1];
+      //text_victory_2.textContent=victoryArr[1];
 
  player_2_start_game.insertAdjacentHTML('beforeend',
 `<svg class='svg_circle_value'>
           <circle
-                  cx="12"
-                  cy="12"
+                  cx="14"
+                  cy="14"
                   r="11"
                   stroke="blue"
                   stroke-width="5"
@@ -278,6 +280,7 @@ if(victoryArr[0]===4||victoryArr[1]===4){
 
 
 button_start_new.addEventListener("click", function(){
+
  for (let i = 0; i < cage_player.length; i++) {
  cage_player[i].style.pointerEvents='auto';//клик
  cage_player[i].classList.remove("delete_cage");
@@ -289,21 +292,24 @@ button_start_new.addEventListener("click", function(){
   victoryArr[1]=0;
  
   activePlayer = 1;
+  text_information.textContent = "Ход ❌";
+  button_start_continue.classList.add("delete_cage");
   player_1_start_game.classList.remove("player_place_active");
   player_2_start_game.classList.remove("player_place_active");
-  button_start_continue.classList.remove("delete_cage");
-  text_information.textContent = "Игра";
- player_1_start_game.innerHTML= `<p class="text_game">Игрок 1</p>
-
-        <p class="text_game text_game_quality" id="text_victory_1">0</p>`;
+  
+ //ТУт поменять 
+ player_1_start_game.innerHTML= `<p class="text_game">Игрок 1</p>`;
+player_2_start_game.innerHTML= `<p class="text_game">Игрок 2</p>`;
+             
 });
+
 
 
 
 //Сделать активной, когда все эелементы массива будут переполнены.
 
 button_start_continue.addEventListener('click',function(){
-
+ text_information.textContent = "Ход ❌";
   for (let i = 0; i < cage_player.length; i++) {
 
  cage_player[i].style.pointerEvents='auto';
@@ -314,10 +320,11 @@ button_start_continue.addEventListener('click',function(){
   }
 
   activePlayer = 1;
+ button_start_continue.classList.add("delete_cage");
   player_1_start_game.classList.remove("player_place_active");
   player_2_start_game.classList.remove("player_place_active");
   
-  text_information.textContent = "Игра";
+  
 
 
 })

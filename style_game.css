@@ -1,7 +1,7 @@
 body {
   user-select: none;
   box-sizing: border-box;
-  background-color: rgb(10, 83, 150);
+  
   min-width: 360px;
   max-width: 2000px;
   margin: 0;
@@ -9,6 +9,9 @@ body {
   margin-right: auto;
   display: flex;
   justify-content: center;
+
+  animation: amimation_body 20s ease-in;/*Побольше почитать про нее*/
+  animation-iteration-count: infinite;
 }
 
 
@@ -17,8 +20,8 @@ body {
 @media screen and (min-width:50px) and (max-width:450px){
 .text_game {
     margin-top: 5px;
-    background-color: aquamarine;
-    width: 35px;
+    
+    width: 40px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -26,6 +29,9 @@ body {
     font-size: 12px;
     font-weight: 700;
     color: blueviolet;
+  }
+  #text_information {
+  width: 60px;
   }
 .button_start_game {
   margin-top: 5px;
@@ -98,11 +104,11 @@ body {
 }
 
 
-@media screen and (min-width:450px) and (max-width:650px) {
+@media screen and (min-width:450px) and (max-width:700px) {
   .text_game {
     margin-top: 5px;
-    background-color: aquamarine;
-    width: 50px;
+   
+    width: 60px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -110,6 +116,9 @@ body {
     font-size: 18px;
     font-weight: 700;
     color: blueviolet;
+  }
+  #text_information {
+   width: 100px;
   }
   .button_start_game {
     margin-top: 5px;
@@ -183,11 +192,11 @@ display: none;
 
 
 
-@media screen and (min-width:650px) and (max-width:950px) {
+@media screen and (min-width:700px) and (max-width:1000px) {
   .text_game {
     margin-top: 10px;
-    background-color: aquamarine;
-    width: 100px;
+   
+    width: 110px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -196,6 +205,9 @@ display: none;
     font-weight: 700;
     color: blueviolet;
   }
+  #text_information {
+          width: 150px;
+        }
 .button_start_game {
   margin-top: 10px;
   background-color: aquamarine;
@@ -263,11 +275,11 @@ display: none;
 }
 }
 
-@media screen and (min-width:950px) and (max-width:10500px) {
+@media screen and (min-width:1000px) and (max-width:10500px) {
 .text_game {
     margin-top: 20px;
-    background-color: aquamarine;
-    width: 150px;
+    
+    width: 160px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -275,6 +287,9 @@ display: none;
     font-size: 35px;
     font-weight: 700;
     color: blueviolet;
+  }
+  #text_information{
+    width: 200px;
   }
 .button_start_game {
   margin-top: 20px;
@@ -387,20 +402,40 @@ display: none;
   
 }
 
+@keyframes  amimation_body {
+  0% {
+  background-color: rgb(138, 43, 226,0.5);
+    }
+  
+    35% {
+background-color: rgb(190, 80, 120,0.5);
+    }
+  
+    70% {
+background-color: rgb(72,122,180,0.5);
+    }
+  100% {
+    background-color: rgb(138, 43, 226, 0.5);
+      }
+}
+
 
 
 .main_place {
-  background-color: aquamarine;
+  background-color: rgba(143, 10, 150, 0.088);
+  border: 10px solid rgb(10, 83, 150);
   width: 80%;
-  min-width: 250px;
+  min-width: 350px;
   height: 700px;
   margin-top: 10%;
   display: flex;
   justify-content: space-between;
+  border-radius: 50px;
 }
 
 .player_place_1 {
-  background-color: rgb(10, 83, 150);
+  background-color: rgba(143, 10, 150, 0.088);
+  border: 10px solid rgb(10, 83, 150);
   width: 20%;
   min-width: 30px;
   margin-right: 10px;
@@ -408,6 +443,7 @@ display: none;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+  border-radius: 0px 30px 30px 0px;
 }
 
 
@@ -431,7 +467,8 @@ display: none;
 
 
 .player_place_2 {
-  background-color: rgb(10, 83, 150);
+  background-color: rgba(143, 10, 150, 0.088);
+  border: 10px solid rgb(10, 83, 150);
   width: 20%;
   min-width: 30px;
   margin-left: 10px;
@@ -439,10 +476,11 @@ display: none;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+  border-radius: 30px 0px 0px 30px;
 }
 
 .game_place {
-  background-color: rgb(10, 83, 150);
+  
   min-width: 200px;
   width: 50%;
   height: 600px;
@@ -460,7 +498,7 @@ display: none;
 
 .conteiner_box {
   margin-top: 10px;
-  background-color: aquamarine;
+  
   min-width: 200px;
   width: 100%;
   height: 350px;
