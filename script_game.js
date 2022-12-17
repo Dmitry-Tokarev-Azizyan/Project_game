@@ -20,7 +20,7 @@ let arrMain = [];
 let draw = 0;
 let victoryArr = [0,0];
 let arr_1, arr_2, arr_3, arr_4, arr_5, arr_6, arr_7, arr_8;
-text_information.textContent = "Ход ❌ играем до 5";
+text_information.textContent = "Ход ❌";
 button_start_continue.classList.add("delete_cage_button");
 
 
@@ -406,7 +406,7 @@ button_start_new.addEventListener("click", function(){
   victoryArr[1]=0;
   draw = 0;
   activePlayer = 1;
-  text_information.textContent = "Ход ❌ играем до 5";
+  text_information.textContent = "Ход ❌";
   button_start_continue.classList.add("delete_cage_button");
   player_1_start_game.classList.remove("player_place_active_1");
   player_2_start_game.classList.remove("player_place_active_2");
