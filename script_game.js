@@ -410,7 +410,6 @@ button_start_new.addEventListener("click", function(){
   text_information.textContent = "Ход ❌";
   player_1_start_game.classList.add("player_place_active_1");
   button_start_continue.classList.add("delete_cage_button");
-  player_1_start_game.classList.remove("player_place_active_1");
   player_2_start_game.classList.remove("player_place_active_2");
   main_place.classList.remove("main_plasce_actice_1");
   main_place.classList.remove("main_plasce_actice_2");
@@ -428,6 +427,7 @@ player_2_start_game.innerHTML= `<p class="text_game">⭕</p>`;
 
 button_start_continue.addEventListener('click',function(){
  text_information.textContent = "Ход ❌";
+ player_1_start_game.classList.add("player_place_active_1");
   for (let i = 0; i < cage_player.length; i++) {
 
  cage_player[i].style.pointerEvents='auto';
@@ -440,7 +440,7 @@ button_start_continue.addEventListener('click',function(){
   button_start_new.classList.remove("delete_cage_button");
   activePlayer = 1;
   button_start_continue.classList.add("delete_cage_button");
-  player_1_start_game.classList.remove("player_place_active_1");
+  
   player_2_start_game.classList.remove("player_place_active_2");
   main_place.classList.remove("main_plasce_actice_1");
   main_place.classList.remove("main_plasce_actice_2");
