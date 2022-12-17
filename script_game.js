@@ -21,6 +21,7 @@ let draw = 0;
 let victoryArr = [0,0];
 let arr_1, arr_2, arr_3, arr_4, arr_5, arr_6, arr_7, arr_8;
 text_information.textContent = "Ход ❌";
+player_1_start_game.classList.add("player_place_active_1");
 button_start_continue.classList.add("delete_cage_button");
 
 
@@ -34,10 +35,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
     if (activePlayer === 1 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 1;
       text_information.textContent = "Ход ⭕";
-      player_2_start_game.classList.remove("player_place_active_2");
-      player_1_start_game.classList.add("player_place_active_1");
-      main_place.classList.add("main_plasce_actice_1");
-      main_place.classList.remove("main_plasce_actice_2");
+      player_2_start_game.classList.add("player_place_active_2");
+      player_1_start_game.classList.remove("player_place_active_1");
+      main_place.classList.remove("main_plasce_actice_1");
+      main_place.classList.add("main_plasce_actice_2");
       //MAP
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <line
@@ -130,10 +131,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
     if (activePlayer === 2 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 10;
       text_information.textContent = "Ход ❌";
-      player_1_start_game.classList.remove("player_place_active_1");
-      player_2_start_game.classList.add("player_place_active_2");
-      main_place.classList.remove("main_plasce_actice_1");
-      main_place.classList.add("main_plasce_actice_2");
+      player_1_start_game.classList.add("player_place_active_1");
+      player_2_start_game.classList.remove("player_place_active_2");
+      main_place.classList.add("main_plasce_actice_1");
+      main_place.classList.remove("main_plasce_actice_2");
       
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <circle
@@ -407,6 +408,7 @@ button_start_new.addEventListener("click", function(){
   draw = 0;
   activePlayer = 1;
   text_information.textContent = "Ход ❌";
+  player_1_start_game.classList.add("player_place_active_1");
   button_start_continue.classList.add("delete_cage_button");
   player_1_start_game.classList.remove("player_place_active_1");
   player_2_start_game.classList.remove("player_place_active_2");
