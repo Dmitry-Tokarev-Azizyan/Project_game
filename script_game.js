@@ -4,6 +4,7 @@
 const cage_player = document.getElementsByClassName("cage");
 const player_1_start_game = document.querySelector(".player_place_1");
 const player_2_start_game = document.querySelector(".player_place_2");
+const main_place = document.querySelector(".main_place");
 const button_start_new = document.getElementById("again_play_new");
 const button_start_continue = document.getElementById("again_play_continue");
 const text_information = document.getElementById("text_information");
@@ -19,8 +20,8 @@ let arrMain = [];
 let draw = 0;
 let victoryArr = [0,0];
 let arr_1, arr_2, arr_3, arr_4, arr_5, arr_6, arr_7, arr_8;
-text_information.textContent = "Ход ❌";
-button_start_continue.classList.add("delete_cage");
+text_information.textContent = "Ход ❌ играем до 5";
+button_start_continue.classList.add("delete_cage_button");
 
 
 
@@ -33,8 +34,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
     if (activePlayer === 1 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 1;
       text_information.textContent = "Ход ⭕";
-      player_2_start_game.classList.remove("player_place_active");
-      player_1_start_game.classList.add("player_place_active");
+      player_2_start_game.classList.remove("player_place_active_2");
+      player_1_start_game.classList.add("player_place_active_1");
+      main_place.classList.add("main_plasce_actice_1");
+      main_place.classList.remove("main_plasce_actice_2");
       //MAP
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <line
@@ -127,8 +130,10 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
     if (activePlayer === 2 && arrMain[i] !== 1 && arrMain[i] !== 10) {
       arrMain[i] = 10;
       text_information.textContent = "Ход ❌";
-      player_1_start_game.classList.remove("player_place_active");
-      player_2_start_game.classList.add("player_place_active");
+      player_1_start_game.classList.remove("player_place_active_1");
+      player_2_start_game.classList.add("player_place_active_2");
+      main_place.classList.remove("main_plasce_actice_1");
+      main_place.classList.add("main_plasce_actice_2");
       
       cage_player[i].innerHTML = `<svg class = "svg_class" width="100" height="100">
                 <circle
@@ -194,8 +199,8 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_8 === 3
     ) {
       text_information.textContent = "Победа ❌";
-      button_start_continue.classList.remove("delete_cage");
-      button_start_new.classList.add("delete_cage");
+      button_start_continue.classList.remove("delete_cage_button");
+      button_start_new.classList.add("delete_cage_button");
       activePlayer = 0;// Перевести в переменные.
       victoryArr[0]+=1;
       //text_victory_1.textContent=victoryArr[0];
@@ -242,8 +247,8 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
       arr_8 === 30
     ) {
       text_information.textContent = "Победа ⭕";
-      button_start_continue.classList.remove("delete_cage");
-      button_start_new.classList.add("delete_cage");
+      button_start_continue.classList.remove("delete_cage_button");
+      button_start_new.classList.add("delete_cage_button");
       activePlayer = 0;
       victoryArr[1]+=1;
       //text_victory_2.textContent=victoryArr[1];
@@ -261,6 +266,7 @@ for (let i = 0; i < cage_player.length; i++) {//цикл
                 </svg>`);
 
       for(let i = 0; i < arrMain.length; i++){
+      cage_player[i].style.pointerEvents='none';
       if(arrMain[i]===0||arrMain[i]===1){
       cage_player[i].classList.add("delete_cage");
       }
@@ -278,8 +284,8 @@ else if (arrMain[0] !== 0 &&
          {
   text_information.textContent = "Ничья";
   draw +=1;
-  button_start_continue.classList.remove("delete_cage");
-  button_start_new.classList.add("delete_cage");
+  button_start_continue.classList.remove("delete_cage_button");
+  button_start_new.classList.add("delete_cage_button");
   for(let i = 0; i < arrMain.length; i++){
       cage_player[i].style.pointerEvents='none';
     }
@@ -345,26 +351,26 @@ else if (arrMain[0] !== 0 &&
 }  
 
 
-if(victoryArr[0]===10){
+if(victoryArr[0]===5){
 text_information.textContent = "Игра окончена, победа ❌";
- button_start_continue.classList.add("delete_cage");
- button_start_new.classList.remove("delete_cage");
+ button_start_continue.classList.add("delete_cage_button");
+ button_start_new.classList.remove("delete_cage_button");
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
 }
-else if(victoryArr[1]===10){
+else if(victoryArr[1]===5){
 text_information.textContent = "Игра окончена, победа ⭕";
- button_start_continue.classList.add("delete_cage");
- button_start_new.classList.remove("delete_cage");
+ button_start_continue.classList.add("delete_cage_button");
+ button_start_new.classList.remove("delete_cage_button");
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
 }
 else if(draw===5){
-  text_information.textContent = "Игра окончена, НИЧЬЯ!";
- button_start_continue.classList.add("delete_cage");
- button_start_new.classList.remove("delete_cage");
+  text_information.textContent = "НИЧЬЯ!";
+ button_start_continue.classList.add("delete_cage_button");
+ button_start_new.classList.remove("delete_cage_button");
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
@@ -398,12 +404,14 @@ button_start_new.addEventListener("click", function(){
 
   victoryArr[0]=0;
   victoryArr[1]=0;
- 
+  draw = 0;
   activePlayer = 1;
-  text_information.textContent = "Ход ❌";
-  button_start_continue.classList.add("delete_cage");
-  player_1_start_game.classList.remove("player_place_active");
-  player_2_start_game.classList.remove("player_place_active");
+  text_information.textContent = "Ход ❌ играем до 5";
+  button_start_continue.classList.add("delete_cage_button");
+  player_1_start_game.classList.remove("player_place_active_1");
+  player_2_start_game.classList.remove("player_place_active_2");
+  main_place.classList.remove("main_plasce_actice_1");
+  main_place.classList.remove("main_plasce_actice_2");
   
  //ТУт поменять 
 player_1_start_game.innerHTML= `<p class="text_game">❌</p>`;
@@ -422,16 +430,18 @@ button_start_continue.addEventListener('click',function(){
 
  cage_player[i].style.pointerEvents='auto';
  cage_player[i].classList.remove("delete_cage");
- button_start_new.classList.remove("delete_cage");
+ 
  arrMain[i] = 0;
  cage_player[i].innerHTML='';
 
   }
-
+  button_start_new.classList.remove("delete_cage_button");
   activePlayer = 1;
- button_start_continue.classList.add("delete_cage");
-  player_1_start_game.classList.remove("player_place_active");
-  player_2_start_game.classList.remove("player_place_active");
+  button_start_continue.classList.add("delete_cage_button");
+  player_1_start_game.classList.remove("player_place_active_1");
+  player_2_start_game.classList.remove("player_place_active_2");
+  main_place.classList.remove("main_plasce_actice_1");
+  main_place.classList.remove("main_plasce_actice_2");
   
   
 
