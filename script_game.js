@@ -356,6 +356,13 @@ if(victoryArr[0]===5){
 text_information.textContent = "Игра окончена, победа ❌";
  button_start_continue.classList.add("delete_cage_button");
  button_start_new.classList.remove("delete_cage_button");
+
+  player_1_start_game.classList.add("player_place_active_1");
+  player_2_start_game.classList.remove("player_place_active_2");
+  main_place.classList.remove("main_plasce_actice_2");
+  main_place.classList.add("main_plasce_actice_1");
+
+
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
@@ -364,6 +371,13 @@ else if(victoryArr[1]===5){
 text_information.textContent = "Игра окончена, победа ⭕";
  button_start_continue.classList.add("delete_cage_button");
  button_start_new.classList.remove("delete_cage_button");
+
+  player_2_start_game.classList.add("player_place_active_2");
+  player_1_start_game.classList.remove("player_place_active_1");
+  main_place.classList.remove("main_plasce_actice_1");
+  main_place.classList.add("main_plasce_actice_2");
+
+
   for(let i = 0; i < arrMain.length; i++){
    cage_player[i].classList.add("delete_cage");
   }
