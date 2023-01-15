@@ -1,5 +1,5 @@
 "use strict";
-
+//ПРОВЕРКА от 15.01.2023h
 //Это у нас получается коллекция клеток
 const cage_player = document.getElementsByClassName("cage");
 const player_1_start_game = document.querySelector(".player_place_1");
